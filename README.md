@@ -1,1 +1,196 @@
-# PLACE
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Venta de Macetas - Proyecto Escolar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#2d59b1;
+      --muted:#000000;
+      --card:#ffffff;
+      --bg:#ffffff;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#000000}
+    header{background:linear-gradient(135deg, rgba(108,99,255,0.12), rgba(108,99,255,0.03));padding:28px 16px;border-bottom:1px solid rgba(0,0,0,0.04)}
+    .container{max-width:1000px;margin:0 auto;padding:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3ab0ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:22px;align-items:center}
+    .hero-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .hero img{width:100%;border-radius:10px;display:block}
+
+    .features{display:flex;gap:12px;margin-top:12px}
+    .feature{flex:1;background:linear-gradient(180deg,rgba(108,99,255,0.04),transparent);padding:10px;border-radius:10px;text-align:center}
+    .feature h4{margin:6px 0;color:var(--accent)}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:20px}
+    .card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04);display:flex;flex-direction:column}
+    .card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+    .card h3{margin:10px 0 6px;font-size:16px}
+    .price{font-weight:700;color:var(--accent)}
+    .muted{color:var(--muted);font-size:14px}
+    .actions{margin-top:auto;display:flex;gap:8px}
+    button{background:var(--accent);color:white;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .btn-ghost{background:transparent;border:1px solid rgba(16,24,40,0.06);color:var(--muted)}
+
+    form.order{display:flex;flex-direction:column;gap:10px}
+    label{font-size:14px}
+    input,select,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+
+    footer{margin-top:30px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr} .hero img{height:240px;object-fit:cover}}
+
+    @media print{body{background:white} header, .actions, .feature, .order button{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+    <div class="brand">
+      <div><img src="maceta.jpg" alt="" width="88" height="58"></div>
+        <div>
+          <h1>Venta de Macetas — Proyecto escolar</h1>
+          <p class="lead">Hecho por: curso de Emprendimiento | Fecha: 2025</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Macetas artesanales — decoración y jardinería</h2>
+        <p class="muted">Ofrecemos macetas hechas por estudiantes: diseños únicos, materiales reciclados y precios solidarios. Ideal para regalar o embellecer tu espacio.</p>
+        <div class="features">
+          <div class="feature"><h4>Hecho a mano</h4><div class="muted">Apoya el trabajo del colegio</div></div>
+          <div class="feature"><h4>Sostenible</h4><div class="muted">Materiales reciclados</div></div>
+          <div class="feature"><h4>Envíos</h4><div class="muted">Retiro en escuela o entrega local</div></div>
+        </div>
+
+        <h3 style="margin-top:14px">Cómo pedir</h3>
+        <ol class="muted">
+          <li>Elige tu modelo en la sección Productos.</li>
+          <li>Completá el formulario de pedido al lado derecho.</li>
+          <li>Confirmamos por e-mail o teléfono.</li>
+        </ol>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Pedido rápido</h3>
+        <form class="order" id="orderForm">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" required placeholder="Ej: Ana Pérez">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="ejemplo@mail.com">
+
+          <label for="product">Elegí maceta</label>
+          <select id="product" name="product">
+            <option value="classic">Clásica - $800</option>
+            <option value="modern">Moderna - $1200</option>
+            <option value="recycled">Reciclada - $500</option>
+          </select>
+
+          <label for="qty">Cantidad</label>
+          <input id="qty" name="qty" type="number" min="1" value="1">
+
+          <label for="notes">Notas / Dirección</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Opcional: dirección para entrega, color preferido..."></textarea>
+
+          <button type="submit">Enviar pedido</button>
+        </form>
+
+        <p class="muted" style="margin-top:10px">Contacto: proyecto.macetas@escuela.edu | Tel: +54 381 300 6449</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2 style="margin-top:18px">Productos</h2>
+      <div class="products" id="products">
+        <article class="card">
+          <img src="plant.jpg" alt="Maceta clásica color terracota">
+          <h3>Maceta Clásica</h3>
+          <div class="muted">Terracota pintada a mano — 15 cm</div>
+          <div style="margin-top:8px"><span class="price">$800</span></div>
+          <div class="actions">
+            <button onclick="selectProduct('classic')">Pedir</button>
+            <button class="btn-ghost" onclick="viewMore('Clásica','Maceta clásica, ideal para suculentas.')">Detalles</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="white.webp" alt="Maceta moderna cerámica blanca">
+          <h3>Maceta Moderna</h3>
+          <div class="muted">Cerámica esmaltada — 18 cm</div>
+          <div style="margin-top:8px"><span class="price">$1200</span></div>
+          <div class="actions">
+            <button onclick="selectProduct('modern')">Pedir</button>
+            <button class="btn-ghost" onclick="viewMore('Moderna','Maceta de cerámica esmaltada para interiores.')">Detalles</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/600x400?text=Maceta+Reciclada" alt="Maceta hecha con materiales reciclados">
+          <h3>Maceta Reciclada</h3>
+          <div class="muted">Plástico y restos reutilizados — 14 cm</div>
+          <div style="margin-top:8px"><span class="price">$500</span></div>
+          <div class="actions">
+            <button onclick="selectProduct('recycled')">Pedir</button>
+            <button class="btn-ghost" onclick="viewMore('Reciclada','Opciones económicas y ecológicas.')">Detalles</button>
+          </div>
+
+        </article>
+         
+        <article class="card">
+          <img src="bo pla.avif" alt="Maceta hecha con materiales reciclados">
+          <h3>Maceta Reciclada</h3>
+          <div class="muted">Plástico y restos reutilizados — 14 cm</div>
+          <div style="margin-top:8px"><span class="price">$500</span></div>
+          <div class="actions">
+            <button onclick="selectProduct('recycled')">Pedir</button>
+            <button class="btn-ghost" onclick="viewMore('Reciclada','Opciones económicas y ecológicas.')">Detalles</button>
+          </div>
+
+      </div>
+    </section>
+
+    <section style="margin-top:20px">
+      <h2>Sobre el proyecto</h2>
+      <p class="muted">Este emprendimiento escolar busca unir aprendizaje, emprendimiento y cuidado del ambiente. Los fondos recaudados se destinan a actividades y materiales del curso.</p>
+    </section>
+
+    <footer>
+      <p>© 2025 — Feria de Emprendimientos Escolares. Diseñado para presentación y venta local.</p>
+    </footer>
+  </main>
+
+  <script>
+    function selectProduct(id){
+      const map = {classic:'Clásica - $800', modern:'Moderna - $1200', recycled:'Reciclada - $500'};
+      document.getElementById('product').value = id;
+      window.scrollTo({top:0,behavior:'smooth'});
+      alert('Seleccionaste: ' + (map[id] || id) + '. Completa el formulario de pedido a la derecha.');
+    }
+
+    function viewMore(title,desc){
+      alert(title + '\n\n' + desc);
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const obj = Object.fromEntries(data.entries());
+      alert('Pedido enviado!\n\nNombre: ' + obj.name + '\nProducto: ' + obj.product + '\nCantidad: ' + obj.qty + '\nEmail: ' + obj.email + '\n\nNos pondremos en contacto pronto.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

@@ -46,9 +46,9 @@
 
     footer{margin-top:30px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
 
-    @media (max-width:900px){.hero{grid-template-columns:1fr} .hero img{height:240px;object-fit:cover}}
+    (@media 700 px) (max-width:900px){.hero{grid-template-columns:1fr} .hero img{height:240px;object-fit:cover}}
 
-    @media print{body{background:white} header, .actions, .feature, .order button{display:none}}
+    (@media 700 px) print{body{background:white} header, .actions, .feature, .order button{display:none}}
   </style>
 </head>
 <body>
@@ -195,4 +195,5 @@
 </body>
 
 </html>
+
 
